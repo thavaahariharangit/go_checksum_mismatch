@@ -1,6 +1,5 @@
 
-
-
+In git lfs disabled module
 ```terminal
 $ go run github.com/vikyd/go-checksum@latest go.mod
 file: go.mod
@@ -11,11 +10,11 @@ file: go.mod
         "HashSynthesizedBase64": "CrsJQsja0pbrBQY744epDVgRU20QKcJJSJnVirQh7Xs=",
         "GoCheckSum": "h1:CrsJQsja0pbrBQY744epDVgRU20QKcJJSJnVirQh7Xs="
 }
-$ go run github.com/vikyd/go-checksum@latest . go.onelayer.dev/v/ericsson@v0.0.0-20231106132719-4556ab1eacd9
+$ go run github.com/vikyd/go-checksum@latest . mynewmodule
 directory: .
 {
-        "HashSynthesized": "bf2daa97bf3eb34ce490cdb8d90eaede7274c5e4e38b7e63c3f3548323efa09b",
-        "HashSynthesizedBase64": "vy2ql78+s0zkkM242Q6u3nJ0xeTji35jw/NUgyPvoJs=",
-        "GoCheckSum": "h1:vy2ql78+s0zkkM242Q6u3nJ0xeTji35jw/NUgyPvoJs="
+        "HashSynthesized": "d0c9b45a9de875534c550d1e9af17c50d3a97f488f79b39e094c8cfbf7716866",
+        "HashSynthesizedBase64": "0Mm0Wp3odVNMVQ0emvF8UNOpf0iPebOeCUyM+/dxaGY=",
+        "GoCheckSum": "h1:0Mm0Wp3odVNMVQ0emvF8UNOpf0iPebOeCUyM+/dxaGY="
 }
 ```
