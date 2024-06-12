@@ -19,7 +19,7 @@ directory: .
 }
 ```
 
-lfs object uploaded
+lfs object uploaded to the same repo
 
 ```
 hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % git lfs track "*.zip" 
