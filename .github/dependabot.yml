@@ -36,55 +36,55 @@ registries:
 
 updates:
   # Check for updates to Go Modules every day
-  - package-ecosystem: "gomod"
-    directory: "/"
-    registries:
-      - goprivate-workaround
-    schedule:
-      interval: "daily"
-    labels:
-      - "dependencies"
-    reviewers:
-      - onelayerhq/maintainers
-    assignees:
-      - yuvalmendelovich
-    commit-message:
-      prefix: "go.mod" # prefix all commit messages with "go.mod: "
-    groups:
-      docker:
-        patterns:
-          - "github.com/docker/*"
-          - "github.com/moby/*"
-      gocloud:
-        patterns:
-          - "gocloud.dev"
-          - "gocloud.dev/*"
-      open-telemetry:
-        patterns:
-          - "go.opentelemetry.io"
-          - "go.opentelemetry.io/*"
-          - "go.opencensus.io"
-      testcontainers:
-        patterns:
-          - "github.com/testcontainers/testcontainers-go"
-          - "github.com/testcontainers/testcontainers-go/modules/*"
+  # - package-ecosystem: "gomod"
+  #   directory: "/"
+  #   registries:
+  #     - goprivate-workaround
+  #   schedule:
+  #     interval: "daily"
+  #   labels:
+  #     - "dependencies"
+  #   reviewers:
+  #     - onelayerhq/maintainers
+  #   assignees:
+  #     - yuvalmendelovich
+  #   commit-message:
+  #     prefix: "go.mod" # prefix all commit messages with "go.mod: "
+  #   groups:
+  #     docker:
+  #       patterns:
+  #         - "github.com/docker/*"
+  #         - "github.com/moby/*"
+  #     gocloud:
+  #       patterns:
+  #         - "gocloud.dev"
+  #         - "gocloud.dev/*"
+  #     open-telemetry:
+  #       patterns:
+  #         - "go.opentelemetry.io"
+  #         - "go.opentelemetry.io/*"
+  #         - "go.opencensus.io"
+  #     testcontainers:
+  #       patterns:
+  #         - "github.com/testcontainers/testcontainers-go"
+  #         - "github.com/testcontainers/testcontainers-go/modules/*"
 
 
   # Check for updates to GitHub Actions every week
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-    assignees:
-      - yuvalmendelovich
-    commit-message:
-      prefix: "github" # prefix all commit messages with "github: "
-    groups:
-      docker:
-        patterns:
-          - "docker/*"
+  # - package-ecosystem: "github-actions"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   labels:
+  #     - "dependencies"
+  #   assignees:
+  #     - yuvalmendelovich
+  #   commit-message:
+  #     prefix: "github" # prefix all commit messages with "github: "
+  #   groups:
+  #     docker:
+  #       patterns:
+  #         - "docker/*"
 
   # Disable automatic updates for go.onelayer.dev/exp because it is an
   # experimental module that is not yet ready for production use.
