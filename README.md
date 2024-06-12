@@ -18,3 +18,22 @@ directory: .
         "GoCheckSum": "h1:0Mm0Wp3odVNMVQ0emvF8UNOpf0iPebOeCUyM+/dxaGY="
 }
 ```
+
+lfs object uploaded
+
+```
+hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % git lfs track "*.zip" 
+Tracking "*.zip"
+hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % git push                                          
+Uploading LFS objects: 100% (1/1), 394 MB | 229 KB/s, done.                                                                                                                                                                                  
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 526 bytes | 526.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/thavaahariharangit/go_checksum_mismatch.git
+   efd37ec..7afbc19  main -> main
+hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % 
+```
