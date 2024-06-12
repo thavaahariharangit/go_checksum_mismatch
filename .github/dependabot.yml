@@ -1,0 +1,99 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+#
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+#
+# Please see the docs for automating Dependabot with Actions:
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions#approve-a-pull-request
+#
+# Pleaase see the docs for troubleshooting Dependabot errors:
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/troubleshooting-dependabot-errors
+#
+# Download and install Dependabot CLI for development and testing:
+# See https://github.com/dependabot/cli or run: 
+#   gh gist view --raw ed91fc5c633e651e6de45840b23fa51e | bash
+# Shell completion: 
+#   dependabot completion bash > ~/bash_completion.d/dependabot.bash
+#
+# Dependabot will create PRs with the "dependencies" label and language-specific
+# labels (e.g. "go", "python", "github-actions") by default. We may remove the
+# language-specific labels by manually specifying the "dependencies" label in
+# the "labels" section of the configuration. We instead use GitHub Labeler to
+# automatically add our own specific labels to PRs.
+
+version: 2
+registries:
+  # Start using the Go module proxy: <https://github.com/dependabot/dependabot-core/issues/1437>.
+  # Workaround detailed in <https://support.github.com/ticket/enterprise/17331/2744173>.
+  goprivate-workaround:
+    type: git
+    url: https://go.onelayer.dev
+    username: x-access-token
+    # The secret must be a valid Dependabot secret accessible in this repository.
+    # Its value can be arbitrary.
+    password: ${{secrets.GO_ONELAYER_DEV_PAT}}
+
+updates:
+  # Check for updates to Go Modules every day
+  - package-ecosystem: "gomod"
+    directory: "/"
+    registries:
+      - goprivate-workaround
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+    reviewers:
+      - onelayerhq/maintainers
+    assignees:
+      - yuvalmendelovich
+    commit-message:
+      prefix: "go.mod" # prefix all commit messages with "go.mod: "
+    groups:
+      docker:
+        patterns:
+          - "github.com/docker/*"
+          - "github.com/moby/*"
+      gocloud:
+        patterns:
+          - "gocloud.dev"
+          - "gocloud.dev/*"
+      open-telemetry:
+        patterns:
+          - "go.opentelemetry.io"
+          - "go.opentelemetry.io/*"
+          - "go.opencensus.io"
+      testcontainers:
+        patterns:
+          - "github.com/testcontainers/testcontainers-go"
+          - "github.com/testcontainers/testcontainers-go/modules/*"
+
+
+  # Check for updates to GitHub Actions every week
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    assignees:
+      - yuvalmendelovich
+    commit-message:
+      prefix: "github" # prefix all commit messages with "github: "
+    groups:
+      docker:
+        patterns:
+          - "docker/*"
+
+  # Disable automatic updates for go.onelayer.dev/exp because it is an
+  # experimental module that is not yet ready for production use.
+  - package-ecosystem: "gomod"
+    directory: "/exp"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "exp/go.mod"
+    open-pull-requests-limit: 0
