@@ -22,9 +22,9 @@ directory: .
 lfs object uploaded to the same repo
 
 ```
-hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % git lfs track "*.zip" 
+$ git lfs track "*.zip" 
 Tracking "*.zip"
-hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % git push                                          
+$ git push                                          
 Uploading LFS objects: 100% (1/1), 394 MB | 229 KB/s, done.                                                                                                                                                                                  
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
@@ -35,7 +35,6 @@ Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/thavaahariharangit/go_checksum_mismatch.git
    efd37ec..7afbc19  main -> main
-hariharanthavachelvam@Hariharans-MacBook-Pro go_checksum_mismatch % 
 ```
 
 
