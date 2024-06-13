@@ -1,5 +1,5 @@
 # Sample Go Lang Repo
-This repo is created to investigate Go Lang checksum mismatch between lfs-enabled and lfs-disabled repo.
+This repo is created to investigate Go Lang checksum mismatch between lfs-enabled and lfs-disabled state.
 
 ## How to check checksum of a module
 ```terminal
