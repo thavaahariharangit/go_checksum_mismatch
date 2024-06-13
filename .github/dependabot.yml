@@ -4,6 +4,10 @@ updates:
   - package-ecosystem: gomod
     directory: /
     schedule:
+      time: "04:00"
+      timezone: Europe/Vienna
       interval: weekly
-      day: sunday
-      time: 16:00
+    groups:
+      deps:
+        patterns:
+          - '*'
