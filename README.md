@@ -36,28 +36,3 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/thavaahariharangit/go_checksum_mismatch.git
    efd37ec..7afbc19  main -> main
 ```
-
-
-# Issue Recreated
-When lfs - disbled
-``` terminal
-% go run github.com/vikyd/go-checksum@latest . mynewmodule
-directory: .
-{
-        "HashSynthesized": "96e9e84cebe8a03ec288ea627f9717db3c6a26007370337464ac12aa450e9190",
-        "HashSynthesizedBase64": "lunoTOvooD7CiOpif5cX2zxqJgBzcDN0ZKwSqkUOkZA=",
-        "GoCheckSum": "h1:lunoTOvooD7CiOpif5cX2zxqJgBzcDN0ZKwSqkUOkZA="
-}
-```
-
-when lfs - enabled
-```terminal
-% go run github.com/vikyd/go-checksum@latest . mynewmodule
-directory: .
-{
-        "HashSynthesized": "56a3b773374ddf38125eac0aeb274fd2e601d828eb39639111bc49d8f7b92866",
-        "HashSynthesizedBase64": "VqO3czdN3zgSXqwK6ydP0uYB2CjrOWOREbxJ2Pe5KGY=",
-        "GoCheckSum": "h1:VqO3czdN3zgSXqwK6ydP0uYB2CjrOWOREbxJ2Pe5KGY="
-}
-
-```
