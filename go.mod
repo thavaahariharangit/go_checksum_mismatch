@@ -1,4 +1,4 @@
-module go.onelayer.dev
+module mynewmodule
 
 go 1.22
 
